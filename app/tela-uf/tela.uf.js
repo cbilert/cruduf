@@ -28,7 +28,7 @@ angular.module('myApp.tela-uf', [
       "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE",
       "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      "Accept": "application/json, text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8"
     }
   };
   
