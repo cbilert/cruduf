@@ -1,0 +1,108 @@
+<div class="jumbotron">
+    <form role="form">
+        <div class="form-row">
+            <div class="alert alert-success alert-dismissible" role="alert" ng-if="mensagemSucesso">
+                <strong>Sucesso!</strong> {{mensagemSucesso}}
+            </div>
+            <div class="alert alert-danger alert-dismissible" role="alert" ng-if="mensagemErro"> 
+                <strong>Erro!</strong> {{mensagemErro}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="siglaUF">Sigla</label>
+                <input type="text" class="form-control" id="siglaUF" placeholder="Sigla da UF" maxlength="2" ng-model="newUF.sigla" style="text-transform: uppercase;">
+            </div>            
+            <div class="form-group col-md-9">
+                <label for="nomeUF">Nome da UF</label>
+                <input type="text" class="form-control" id="nomeUF" placeholder="Nome da UF" ng-model="newUF.nomeUF" style="text-transform: capitalize;">
+            </div>
+        </div>
+        <div class="form-row">
+            <button type="submit" class="btn btn-primary float-left" data-ng-click="saveUF()">Salvar</button>
+        </div>
+    </form>
+</div>
+
+<div class="jumbotron" >
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sigla</th>
+            <th scope="col">Nome UF</th>
+            <th scope="col">Data Cadastro</th>
+            <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="uf in listaUF">
+                <th scope="row">{{$index+1}}</th>
+                <td>{{uf.sigla | uppercase}}</td>
+                <td>{{uf.nomeUF}}</td>
+                <td>{{uf.dataCadastro | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+                <td>
+                    <div class="btn-group btn-group-sm" role="group" >
+                        <button type="button" class="btn btn-warning" title="Atualizar" data-toggle="modal" data-target="#modalEdit" ng-click="selectUF(uf)">Atualizar</button>
+                        <button type="button" class="btn btn-danger" title="Remover"  data-toggle="modal" data-target="#modalDelete" ng-click="selectUF(uf)">Remover</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal Update -->
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <form role="form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditTitle">Atualiza Unidade Federativa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>  
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="siglaUF">Sigla</label>
+                            <input type="text" class="form-control" id="siglaUF" placeholder="Sigla da UF" maxlength="2" ng-model="selectedUF.sigla">
+                        </div>            
+                        <div class="form-group col-md-9">
+                            <label for="nomeUF">Nome da UF</label>
+                            <input type="text" class="form-control" id="nomeUF" placeholder="Nome da UF" ng-model="selectedUF.nomeUF">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" data-ng-click="updateUF()">Atualizar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal Delete -->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDeleteTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <form role="form">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeleteTitle">Remover Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>  
+                <div class="modal-body">
+                    <strong style="color: red;">
+                        Realmente deseja excluir este registro?
+                    </strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" data-ng-click="deleteUF()">Sim</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
