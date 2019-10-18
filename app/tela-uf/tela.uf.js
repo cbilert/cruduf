@@ -32,11 +32,11 @@ angular.module('myApp.tela-uf', [
   $scope.loadLista = function(){  
     $http.get($scope.WEB_SERVICE_URL+'/listar',{headers:headers})
          .then( function(response) {
-                  //console.log(response);
+                  console.log(response);
                   $scope.listaUF = response.data;
                   $scope.mensagemErro="";
                 }, function(error) {
-                  //console.log(error);
+                  console.log(error);
                   $scope.mensagemSucesso = "";
                   $scope.mensagemErro = error.data.result;
                 }
