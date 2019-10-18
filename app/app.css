@@ -1,1 +1,11 @@
-
+@media screen and (max-width: 800px) {
+    tr {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0.5em 0;
+    }
+    td, th {
+      flex: 1 1 150px;
+    }
+  }
