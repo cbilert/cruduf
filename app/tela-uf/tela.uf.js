@@ -95,7 +95,7 @@ angular.module('myApp.tela-uf', [
             $scope.mensagemErro = "";
           }, 2500);
         });
-    $scope.selectUF = {};
+    $scope.selectedUF = {};
   };
 
   $scope.deleteUF = function(){
