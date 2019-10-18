@@ -24,8 +24,8 @@ angular.module('myApp.tela-uf', [
   $scope.WEB_SERVICE_URL = 'https://ufwebservicerest.herokuapp.com/uf';
   $scope.config = { 
     headers = {
-      'Access-Control-Allow-Origin' :'*' ,
-      'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+      'Access-Control-Allow-Origin': '*' ,
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
@@ -33,8 +33,8 @@ angular.module('myApp.tela-uf', [
   
   $scope.loadLista = function(){  
     $http.get($scope.WEB_SERVICE_URL+'/listar',headers = {
-      'Access-Control-Allow-Origin' :'*' ,
-      'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+      'Access-Control-Allow-Origin': '*' ,
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     })
