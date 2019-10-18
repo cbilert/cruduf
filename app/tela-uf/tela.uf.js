@@ -53,7 +53,7 @@ angular.module('myApp.tela-uf', [
   $scope.loadLista();
   
   $scope.saveUF = function(){
-    $http.post($scope.WEB_SERVICE_URL+'/cadastrar',$scope.newUF)
+    $http.post($scope.WEB_SERVICE_URL+'/cadastrar',$scope.newUF,config)
          .then( function(response) {
                  // console.log(response.data);
                   $scope.mensagemSucesso =response.data.result;
@@ -79,7 +79,7 @@ angular.module('myApp.tela-uf', [
   };
 
   $scope.updateUF = function(){
-    $http.put($scope.WEB_SERVICE_URL+'/alterar', $scope.selectedUF)
+    $http.put($scope.WEB_SERVICE_URL+'/alterar', $scope.selectedUF,config)
          .then( function(response) {
                   //console.log(response.data);
                   $scope.mensagemSucesso = response.data.result;
@@ -101,7 +101,7 @@ angular.module('myApp.tela-uf', [
   };
 
   $scope.deleteUF = function(){
-    $http.delete($scope.WEB_SERVICE_URL+'/excluir/'+$scope.selectedUF.sigla, $scope.selectedUF.sigla)
+    $http.delete($scope.WEB_SERVICE_URL+'/excluir/'+$scope.selectedUF.sigla, $scope.selectedUF.sigla,config)
          .then( function(response) {
                   //console.log(response.data);
                   $scope.mensagemSucesso=response.data.result;
