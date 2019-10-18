@@ -24,9 +24,9 @@ angular.module('myApp.tela-uf', [
   $scope.WEB_SERVICE_URL = 'https://ufwebservicerest.herokuapp.com/uf';
   var config = { 
     "headers" : {
-      "Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Access-Control-Allow-Origin",
       "Access-Control-Allow-Origin" :"https://cruduf.herokuapp.com/#!/tela-uf" ,
       "Access-Control-Allow-Methods" : "POST, GET, OPTIONS, PUT, DELETE",
+      "Access-Control-Allow-Headers": "Access-Control-Allow-Origin",
       "Content-Type": "application/json",
       "Accept": "application/json"
     }
