@@ -1,12 +1,16 @@
 Projeto angularJS de Cadastro de Unidades Federativas baseado no projeto angular-seed (https://github.com/angular/angular-seed.git).
 
-### Run the Application
+Uma versão em execução está disponibilizada no heroku.
+```
+http://cruduf.herokuapp.com
+```
 
-We have preconfigured the project with a simple development web server. The simplest way to start
-this server is:
+### Executar a Aplicação
+
+Executar o comando abaixo dentro da pasta do projeto pelo terminal ou prompt de comando:
 
 ```
 npm start
 ```
 
-Now browse to the app at [`localhost:8000/index.html`][local-app-url].
+Acessar esta URL através do navegador [`localhost:8000/`].
