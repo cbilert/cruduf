@@ -32,7 +32,12 @@ angular.module('myApp.tela-uf', [
   };
   
   $scope.loadLista = function(){  
-    $http.get($scope.WEB_SERVICE_URL+'/listar',$scope.config)
+    $http.get($scope.WEB_SERVICE_URL+'/listar',headers = {
+      'Access-Control-Allow-Origin' :'*' ,
+      'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
          .then( function(response) {
                   console.log(response);
                   $scope.listaUF = response.data;
