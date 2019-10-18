@@ -24,7 +24,6 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "npm start ",
     "//": "Do not install the Firefox driver to work around https://github.com/angular/webdriver-manager/issues/303.",
     "update-webdriver": "webdriver-manager update --gecko false",
     "preprotractor": "npm run update-webdriver",
