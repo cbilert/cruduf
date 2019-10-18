@@ -21,16 +21,22 @@ angular.module('myApp.tela-uf', [
   $scope.newUF = {};
   $scope.selectedUF={};
   $scope.listaUF = []
-  $scope.WEB_SERVICE_URL = 'http://localhost:8080/UFWebServiceRest/uf';
-  
+  $scope.WEB_SERVICE_URL = 'https://ufwebservicerest.herokuapp.com/uf';
+  var headers = {
+    'Access-Control-Allow-Origin' : '*',
+    'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  };
   
   $scope.loadLista = function(){  
-    $http.get($scope.WEB_SERVICE_URL+'/listar')
+    $http.get($scope.WEB_SERVICE_URL+'/listar',headers)
          .then( function(response) {
+                  console.log(response);
                   $scope.listaUF = response.data;
                   $scope.mensagemErro="";
                 }, function(error) {
-                  //console.log(error);
+                  console.log(error);
                   $scope.mensagemSucesso = "";
                   $scope.mensagemErro = error.data.result;
                 }
