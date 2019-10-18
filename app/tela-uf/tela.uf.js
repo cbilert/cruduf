@@ -23,11 +23,11 @@ angular.module('myApp.tela-uf', [
   $scope.listaUF = []
   $scope.WEB_SERVICE_URL = 'https://ufwebservicerest.herokuapp.com/uf';
   var config = { 
-    headers : {
-      'Access-Control-Allow-Origin' :'*' ,
-      'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
+    "headers" : {
+      "Access-Control-Allow-Origin" :"*" ,
+      "Access-Control-Allow-Methods" : "POST, GET, OPTIONS, PUT",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     }
   };
   
