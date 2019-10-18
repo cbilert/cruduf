@@ -22,7 +22,7 @@ angular.module('myApp.tela-uf', [
   $scope.selectedUF={};
   $scope.listaUF = []
   $scope.WEB_SERVICE_URL = 'https://ufwebservicerest.herokuapp.com/uf';
-  var config = { 
+  $scope.config = { 
     headers = {
       'Access-Control-Allow-Origin' :'*' ,
       'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
@@ -32,7 +32,7 @@ angular.module('myApp.tela-uf', [
   };
   
   $scope.loadLista = function(){  
-    $http.get($scope.WEB_SERVICE_URL+'/listar',config)
+    $http.get($scope.WEB_SERVICE_URL+'/listar',$scope.config)
          .then( function(response) {
                   console.log(response);
                   $scope.listaUF = response.data;
